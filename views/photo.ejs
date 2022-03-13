@@ -1,0 +1,34 @@
+<%- include('partials/_header') -%>
+
+<body>
+    <div class="tm-page-wrap mx-auto">
+        
+
+        <div class="container-fluid">
+            
+                 <%- include('partials/_navigation') -%>
+
+                <div class="container-fluid">
+                    <img src="<%=photo.image %>" class="img-fluid"/>
+                </div>
+                <div class="containert-fluid">
+                    <h3 class="tm-text-primary mb-3 tm-catalog-item-title"><%=photo.title %></h3>
+                    <p class="tm-catalog-item-text"><%=photo.description %></p>
+                    <div class="col-4 row-cols-2 tm-bg-gray">
+                        <div class="container">
+                            <a href="/photos/edit/<%= photo._id %>" type="button" class="btn btn-primary">Update Details</a>
+                        </div>
+                        <br>
+                        <div class="container">
+                            <a type="button" href="/photos/<%= photo._id %>?_method=DELETE" onclick="return confirm('ARE YOU SURE?');" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>        
+                
+
+                <!-- Subscribe form and footer links -->
+              <%- include('partials/_footer') -%>
+    
+</body>
+
+</html>
